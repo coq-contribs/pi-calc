@@ -1,0 +1,8 @@
+-R . PiCalc
+alglaws.v
+bangpack.v
+basiclemmata.v
+hoaspack.v
+picalc.v
+picalcth.v
+xadequacy.v

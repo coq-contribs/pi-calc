@@ -1,0 +1,38 @@
+Pi-calculus in Coq
+Ivan Scagnetto (scagnett@dimi.uniud.it)
+Dipartimento di Matematica e Informatica, University of Udine
+-------------------------------------------------------------
+
+This is a HOAS-based encoding of the pi-calculus (as originally
+conceived by Milner, Parrow and Walker in "A Calculus of Mobile
+Processes" Parts I-II, Information and Computation n. 100) together
+with the formal verification of a large part of the metatheory of
+Strong Late Bisimilarity.
+
+All the source files are part of "Pi-calculus in (Co)Inductive Type
+Theory", a joint work with Furio Honsell and Marino Miculan (accepted
+for publication on TCS).  If you are interested you can find more
+information (and a gzipped PostScript version of the mentioned
+article) at the following URL:
+http://www.dimi.uniud.it/~scagnett/pi-calculus.html
+
+Coq Source Code:
+
+In the file 'picalcth.v' there is the encoding of the syntax, labelled
+transition system (LTS) and Strong Late Bisimilarity (as a GFP of a
+suitable monotonic operator and as a coinductive predicate).
+
+In 'xadequacy.v' there is the formal proof of the equivalence of the
+two abovementioned encodings of Strong Late Bisimilarity.
+
+Axioms and facts concerning syntactic contexts and variables can be
+found in 'hoaspack.v'.
+
+The basic properties of the LTS and Strong Late Bisimilarity are
+proved in 'basiclemmata.v'.
+
+In 'alglaws.v' there is the formal verification of a large part of the
+metatheory of Strong Late Bisimilarity.
+
+Finally in 'bangpack.v' there is the proof of the congruence of Strong
+Late Bisimilarity w.r.t. the ! (bang) operator.
