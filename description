@@ -12,3 +12,4 @@ Description: This is a HOAS-based encoding of the pi-calculus (as originally
 Url: http://www.dimi.uniud.it/~scagnett/pi-calculus.html
 Keywords: process algebras pi-calculus concurrency formal verification
           higher order abstract syntax
+Category: Computer Science/Concurrent Systems and Protocols/Theory of concurrent systems
