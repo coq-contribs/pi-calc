@@ -11,5 +11,5 @@ Description: This is a HOAS-based encoding of the pi-calculus (as originally
              metatheory of Strong Late Bisimilarity.
 URL: http://www.dimi.uniud.it/~scagnett/pi-calculus.html
 Keywords: process algebras, pi-calculus, concurrency, formal verification,
-          higher order abstract syntax
+          higher order syntax
 Category: Computer Science/Concurrent Systems and Protocols/Theory of concurrent systems
