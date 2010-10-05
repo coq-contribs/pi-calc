@@ -567,10 +567,6 @@ intro;
 elim (unsat (nu (fun x : name => nu (p x))) empty); intros; inversion_clear H;
  clear H1.
 apply proc_ext with x; auto.
-apply notin_nu; intros; inversion_clear H0.
-cut (notin x (nu (p z))); [ intro | auto ].
-apply notin_nu; intros; inversion_clear H0; auto.
-apply ETA_EQ.
 
 Qed.
 

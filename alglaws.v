@@ -2924,7 +2924,6 @@ inversion_clear H23; auto.
 unfold f_act_notin_ho in |- *; intros; apply f_act_notin_tau.
 change (ftrans (p x y) ((fun _ : name => tau) y) (x1 x y)) in |- *;
  apply FTR_L3 with x0; auto.
-inversion_clear H8; apply notin_nu; intros; auto.
 rewrite <- H14; assumption.
 unfold f_act_notin_ho in |- *; intros; apply f_act_notin_tau.
 rewrite <- H14; assumption.
@@ -2989,7 +2988,6 @@ inversion_clear H31; auto.
 unfold f_act_notin_ho in |- *; intros; apply f_act_notin_Out; auto.
 change (ftrans (p x y) ((fun _ : name => Out n n0) y) (x1 x y)) in |- *;
  apply FTR_L3 with x0; auto.
-inversion_clear H10; apply notin_nu; intros; auto.
 rewrite <- H18; assumption.
 unfold f_act_notin_ho in |- *; intros; apply f_act_notin_Out; auto.
 rewrite <- H18; assumption.
@@ -3065,7 +3063,6 @@ inversion_clear H15; apply notin_nu; intros.
 cut (notin y (nu (fun z0 : name => x1 z0 z))); [ intro | auto ].
 inversion_clear H23; auto.
 unfold f_act_notin_ho in |- *; intros; apply f_act_notin_tau.
-inversion_clear H17; apply notin_nu; intros; auto.
 unfold f_act_notin_ho in |- *; intros; apply f_act_notin_tau.
 rewrite H14 in H5; cut (p2 = (fun n : name => nu (x1 n)));
  [ intro | apply proc_ext with x; auto ].
@@ -3139,7 +3136,6 @@ inversion_clear H19; apply notin_nu; intros.
 cut (notin y (nu (fun z0 : name => x1 z0 z))); [ intro | auto ].
 inversion_clear H31; auto.
 unfold f_act_notin_ho in |- *; intros; apply f_act_notin_Out; auto.
-inversion_clear H23; apply notin_nu; intros; auto.
 unfold f_act_notin_ho in |- *; intros; apply f_act_notin_Out; auto.
 rewrite H18 in H7; cut (p2 = (fun n : name => nu (x1 n)));
  [ intro | apply proc_ext with x; auto ].
@@ -3218,7 +3214,6 @@ inversion_clear H29; auto.
 unfold b_act_notin_ho in |- *; intros; apply b_act_notin_In; auto.
 change (btrans (p x0 y) ((fun _ : name => In x) y) (x2 x0 y)) in |- *;
  apply BTR_L3 with x1; auto.
-inversion_clear H9; apply notin_nu; intros; auto.
 rewrite <- H16; assumption.
 unfold b_act_notin_ho in |- *; intros; apply b_act_notin_In; auto.
 rewrite <- H16; assumption.
@@ -3326,7 +3321,6 @@ inversion_clear H27; apply notin_nu; intros.
 cut (notin y (nu (fun y0 : name => x2 y0 z z0))); [ intro | auto ].
 inversion_clear H29; auto.
 unfold b_act_notin_ho in |- *; intros; apply b_act_notin_In; auto.
-inversion_clear H21; apply notin_nu; intros; auto.
 unfold b_act_notin_ho in |- *; intros; apply b_act_notin_In; auto.
 rewrite H16 in H6;
  cut (p2 = (fun n y : name => nu (fun z : name => x2 n z y)));
@@ -3408,7 +3402,6 @@ inversion_clear H29; auto.
 unfold b_act_notin_ho in |- *; intros; apply b_act_notin_bOut; auto.
 change (btrans (p x0 y) ((fun _ : name => bOut x) y) (x2 x0 y)) in |- *;
  apply BTR_L3 with x1; auto.
-inversion_clear H9; apply notin_nu; intros; auto.
 rewrite <- H16; assumption.
 unfold b_act_notin_ho in |- *; intros; apply b_act_notin_bOut; auto.
 rewrite <- H16; assumption.
@@ -3469,7 +3462,6 @@ inversion_clear H26; auto.
 unfold f_act_notin_ho in |- *; intros; apply f_act_notin_Out; auto.
 change (ftrans (p x0 y) (Out x y) (p2 x0 y)) in |- *; apply FTR_L3 with x2;
  auto.
-inversion_clear H9; apply notin_nu; intros; auto.
 unfold f_act_notin_ho in |- *; intros; apply f_act_notin_Out; auto.
 inversion_clear H14; apply notin_nu; intros;
  cut (notin y (nu (fun y0 : name => p y0 z))); [ intro | auto ].
@@ -3524,7 +3516,6 @@ inversion_clear H27; auto.
 unfold f_act_notin_ho in |- *; intros; apply f_act_notin_Out; auto.
 change (ftrans (p x0 y) ((fun _ : name => Out x x0) y) (x2 x0 y)) in |- *;
  apply FTR_L3 with x1; auto.
-inversion_clear H9; apply notin_nu; intros; auto.
 rewrite <- H17; assumption.
 unfold f_act_notin_ho in |- *; intros; apply f_act_notin_Out; auto.
 rewrite <- H17; assumption.
@@ -3615,7 +3606,6 @@ inversion_clear H27; apply notin_nu; intros.
 cut (notin y (nu (fun y0 : name => x2 y0 z z0))); [ intro | auto ].
 inversion_clear H29; auto.
 unfold b_act_notin_ho in |- *; intros; apply b_act_notin_bOut; auto.
-inversion_clear H21; apply notin_nu; intros; auto.
 unfold b_act_notin_ho in |- *; intros; apply b_act_notin_bOut; auto.
 rewrite H16 in H6;
  cut (p2 = (fun n y : name => nu (fun z : name => x2 n z y)));
@@ -3670,7 +3660,6 @@ inversion_clear H15; apply notin_nu; intros.
 cut (notin y (nu (fun z0 : name => p2 z0 z))); [ intro | auto ].
 inversion_clear H26; auto.
 unfold f_act_notin_ho in |- *; intros; apply f_act_notin_Out; auto.
-inversion_clear H19; apply notin_nu; intros; auto.
 unfold f_act_notin_ho in |- *; intros; apply f_act_notin_Out; auto.
 intros; apply REF.
 apply b_act_notin_bOut; auto.
@@ -3726,7 +3715,6 @@ inversion_clear H18; apply notin_nu; intros.
 cut (notin y (nu (fun n : name => x2 n z))); [ intro | auto ].
 inversion_clear H27; auto.
 unfold f_act_notin_ho in |- *; intros; apply f_act_notin_Out; auto.
-inversion_clear H22; apply notin_nu; intros; auto.
 unfold f_act_notin_ho in |- *; intros; apply f_act_notin_Out; auto.
 rewrite H17 in H6; cut (q1 = (fun n : name => nu (x2 n)));
  [ intro | apply proc_ext with x0; auto ].
@@ -7089,7 +7077,6 @@ inversion_clear H7; unfold f_act_notin_ho in |- *; intros;
  inversion_clear H24; elim (BTR_L1 q0 q2 (In x0) x H26 H15); 
  intros; inversion_clear H24; apply f_act_notin_Out; 
  auto.
-inversion_clear H20; apply notin_nu; intros; auto.
 unfold f_act_notin_ho in |- *; intros; assumption.
 exists (nu p3); exists (par (nu (fun n : name => x1 n)) (q2 y)); split;
  [ apply REF | split; [ idtac | apply REF ] ].
