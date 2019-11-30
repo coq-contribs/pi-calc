@@ -156,7 +156,7 @@ Lemma Completeness : forall p1 p2 : proc, StBisim' p1 p2 -> StBisim p1 p2.
 Proof. 
 
 intros. elim H. unfold Inclus in |- *. do 2 intro.  generalize p1 p2. 
-cofix. intros. case (H0 p0 p3 H1). intros. 
+cofix Completeness. intros. case (H0 p0 p3 H1). intros. 
 
 apply sb. split. intro. 
 cut

@@ -31,7 +31,7 @@ Lemma REF : forall p : proc, StBisim p p.
 
 Proof. (* This lemma is proved from scratch: it is a coinductive proof. *)
 
-cofix; intro; apply sb; do 3 try (split; intros).
+cofix REF; intro; apply sb; do 3 try (split; intros).
 exists p1; split; auto.
 exists q1; split; auto.
 exists p1; split; [ assumption | intro; auto ].
@@ -45,7 +45,7 @@ Lemma SYM : forall p q : proc, StBisim p q -> StBisim q p.
 
 Proof. (* This lemma is proved from scratch: it is a coinductive proof. *)
 
-cofix; intros; apply sb; do 3 try (split; intros).
+cofix SYM; intros; apply sb; do 3 try (split; intros).
 
 inversion H.
 elim H1; intros.
@@ -95,7 +95,7 @@ Lemma TRANS : forall p q r : proc, StBisim p q -> StBisim q r -> StBisim p r.
 
 Proof. (* This lemma depends on Lemma L6_Light: it is a coinductive proof. *)
 
-cofix.
+cofix TRANS.
 do 4 intro.
 inversion_clear H.
 intro.
@@ -707,7 +707,7 @@ Proof. (* This lemma depends on Lemmata FTR_L3, BTR_L3 and L6_Light:
         * it is a coinductive proof.
         *)
 
-cofix; intros; apply sb; do 3 try (split; intros).
+cofix NU_S; intros; apply sb; do 3 try (split; intros).
 inversion H0.
 generalize H2.
 generalize H0.
@@ -2882,7 +2882,7 @@ Proof. (* This lemma depends on Lemmata FTR_L3, BTR_L3:
         * it is a coinductive proof.
         *)
 
-cofix; intro; apply sb; do 3 try (split; intros).
+cofix NU_COMM; intro; apply sb; do 3 try (split; intros).
 generalize H; clear H; elim a; intros.
 
 (* TAU action case *)
@@ -4293,7 +4293,7 @@ Lemma ID_PAR : forall p : proc, StBisim (par p nil) p.
 
 Proof. (* This lemma is proved from scratch: it is a coinductive proof. *)
 
-cofix; intro; apply sb; do 3 try (split; intros).
+cofix ID_PAR; intro; apply sb; do 3 try (split; intros).
 
 inversion_clear H.
 exists p3; split; [ assumption | apply ID_PAR ].
